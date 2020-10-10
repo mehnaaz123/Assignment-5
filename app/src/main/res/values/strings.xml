@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Memo App</string>
+    <string name="title_item_list">Items</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="Title">Title</string>
+    <string name="Description">Description</string>
+    <string name="Details">Details</string>
+</resources>
