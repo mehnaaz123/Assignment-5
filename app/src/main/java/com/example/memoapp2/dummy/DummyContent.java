@@ -23,15 +23,14 @@ public class DummyContent {
      */
     public static final Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
 
-    private static final int COUNT = 25;
+    //private static final int COUNT = 25;
 
     static {
-        // May be subject to change.....
-       addItem(new DummyItem("Title1", "Desc1", "Details1"));
-       addItem(new DummyItem("Title2", "Desc2", "Details2"));
-       addItem(new DummyItem("Title3", "Desc3", "Details3"));
-       addItem(new DummyItem("Title4", "Desc4", "Details4"));
-       addItem(new DummyItem("Title5", "Desc5", "Details5"));
+       addItem(new DummyItem("Memo 001", "Saturday's To Do List", "All must be done by the end of the day Saturday! If you forget, consider yourself in big trouble!", " Walk the dog\n Wash the dishes\n Do the laundry\n Read a book"));
+       addItem(new DummyItem("Memo 002", "Directions to Lia's House", "Don't forget to tell Lia about the major upcoming project you were forewarned about!", " Turn left off Number St.\n Turn right near the grocery store\n Drive Straight 10 miles\n Turn left at Sheridan Rd."));
+       addItem(new DummyItem("Memo 003", "Important Emails", "Read emails from Cathy and Luke", "Don't forget to acknowledge the emails and tell Luke that there is a meeting tom!"));
+       addItem(new DummyItem("Memo 004", "Grocery List", "Remember to buy these on your way home from the dentist appointment on Thursday!", " Milk\n Bread\n Eggs\n Bagels\n Jell-O\n Noodles\n Coriander\n Oregano"));
+       addItem(new DummyItem("Memo 005", "Textbooks To Buy", "Order Sadaf's textbooks for her classes this semester", " https://www.amazon.ca/Canadian-Criminal-Justice-Curt-Griffiths/dp/0176529209\n\n https://www.wiley.com/en-us/Big+Java%3A+Late+Objects%2C+1st+Edition-p-9781119626152#:~:text=Big%20Java%3A%20Late%20Objects%2C%201st%20Edition%20%7C%20Wiley,first%20course%20in%20programming%20for%20computer%20science%20students."));
     }
 
     private static void addItem(DummyItem item) {
@@ -39,28 +38,18 @@ public class DummyContent {
         ITEM_MAP.put(item.title, item);
     }
 
-    private static DummyItem createDummyItem(int position) {
-        return new DummyItem(String.valueOf(position), "Item " + position, makeDetails(position));
-    }
-
-    private static String makeDetails(int position) {
-        StringBuilder builder = new StringBuilder();
-        builder.append("Details about Item: ").append(position);
-        for (int i = 0; i < position; i++) {
-            builder.append("\nMore details information here.");
-        }
-        return builder.toString();
-    }
-
     /**
      * A dummy item representing a piece of content.
      */
     public static class DummyItem {
+        public final String id;
         public final String title;
         public final String description;
         public final String details;
 
-        public DummyItem(String title, String description, String details) {
+
+        public DummyItem(String id, String title, String description, String details) {
+            this.id = id;
             this.title = title;
             this.description = description;
             this.details = details;
